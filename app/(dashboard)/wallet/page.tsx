@@ -80,7 +80,7 @@ export default function WalletPage() {
   /* ── ADD MONEY via Razorpay ─────────────────────────────────────────── */
   const handleAddMoney = async () => {
     const amt = Number(addAmount);
-    if (!amt || amt < 100) return setMsg({ type: 'error', text: 'Minimum deposit is ₹100' });
+    if (!amt || amt < 1) return setMsg({ type: 'error', text: 'Minimum deposit is ₹100' });
     if (amt > 500000) return setMsg({ type: 'error', text: 'Maximum is ₹5,00,000 per transaction' });
 
     setAddLoading(true);

@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     await connectDB();
     const { amount, razorpayPaymentId, razorpayOrderId } = await req.json();
 
-    if (!amount || amount < 100) {
+    if (!amount || amount < 1) {
       return NextResponse.json({ error: 'Minimum deposit is ₹100' }, { status: 400 });
     }
 

@@ -13,7 +13,7 @@ export async function POST(req: NextRequest) {
     if (!auth) return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
 
     const { amount } = await req.json();
-    if (!amount || amount < 100) {
+    if (!amount || amount < 1) {
       return NextResponse.json({ error: 'Minimum amount is ₹100' }, { status: 400 });
     }
     if (amount > 500000) {
